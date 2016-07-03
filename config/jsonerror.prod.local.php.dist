@@ -1,0 +1,13 @@
+<?php
+
+// production version
+
+return [
+    'middleware_pipeline' => [
+        'error' => [
+            'middleware' => [
+                Blast\JsonError\JsonErrorMiddleware::class,
+            ],
+        ],
+    ],
+];

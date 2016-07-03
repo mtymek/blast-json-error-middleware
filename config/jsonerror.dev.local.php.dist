@@ -6,8 +6,14 @@ return [
     'middleware_pipeline' => [
         'error' => [
             'middleware' => [
-                Blast\JsonError\Middleware\DebugJsonErrorMiddleware::class,
+                Blast\JsonError\DebugJsonErrorMiddleware::class,
             ],
         ],
+    ],
+    'blast_json_error' => [
+        'strip_base_dir' => true,
+
+        // uncomment to customize base_dir - otherwise current working dir will be used
+        // 'base_dir' => getcwd(),
     ],
 ];

@@ -1,8 +1,8 @@
 <?php
 
-namespace Blast\Test\JsonError\Middleware;
+namespace Blast\Test\JsonError;
 
-use Blast\JsonError\Middleware\JsonErrorMiddleware;
+use Blast\JsonError\JsonErrorMiddleware;
 use Exception;
 use PHPUnit_Framework_TestCase;
 use Zend\Diactoros\Response;

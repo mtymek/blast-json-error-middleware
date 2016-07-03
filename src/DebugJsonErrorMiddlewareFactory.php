@@ -1,6 +1,6 @@
 <?php
 
-namespace Blast\JsonError\Middleware;
+namespace Blast\JsonError;
 
 use Interop\Container\ContainerInterface;
 

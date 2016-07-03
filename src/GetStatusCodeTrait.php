@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Blast\JsonError\Middleware;
+namespace Blast\JsonError;
 
 use Exception;
 use Psr\Http\Message\ResponseInterface;

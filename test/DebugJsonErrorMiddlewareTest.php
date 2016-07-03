@@ -1,8 +1,8 @@
 <?php
 
-namespace Blast\Test\JsonError\Middleware;
+namespace Blast\Test\JsonError;
 
-use Blast\JsonError\Middleware\DebugJsonErrorMiddleware;
+use Blast\JsonError\DebugJsonErrorMiddleware;
 use Exception;
 use PHPUnit_Framework_TestCase;
 use Zend\Diactoros\Response;
@@ -13,10 +13,10 @@ class DebugJsonErrorMiddlewareTest extends PHPUnit_Framework_TestCase
     public function testReturnsJsonWithExceptionInformation()
     {
         $exception = new Exception("Error");
-        $middleware = new DebugJsonErrorMiddleware(true, dirname(dirname(__DIR__)));
+        $middleware = new DebugJsonErrorMiddleware(true, dirname(__DIR__));
         $response = $middleware($exception, new ServerRequest(), new Response(), function () {
         });
         $json = json_decode($response->getBody()->__toString(), true);
-        $this->assertEquals('test/Middleware/DebugJsonErrorMiddlewareTest.php:15', $json['error']['file']);
+        $this->assertEquals('test/DebugJsonErrorMiddlewareTest.php:15', $json['error']['file']);
     }
 }

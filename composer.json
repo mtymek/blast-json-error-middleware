@@ -1,0 +1,31 @@
+{
+    "name": "mtymek/blast-json-error",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Mateusz Tymek",
+            "email": "mtymek@gmail.com"
+        }
+    ],
+    "require": {
+        "psr/http-message-implementation": "^1.0"
+    },
+    "require-dev": {
+        "filp/whoops": "^2.1",
+        "phpunit/phpunit": "^5.4",
+        "zendframework/zend-diactoros": "^1.3",
+        "zendframework/zend-servicemanager": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Blast\\JsonError\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BlastTest\\JsonError\\": "test"
+        }
+    }
+}
+
+

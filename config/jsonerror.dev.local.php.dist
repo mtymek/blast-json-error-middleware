@@ -1,0 +1,13 @@
+<?php
+
+// debug version
+
+return [
+    'middleware_pipeline' => [
+        'error' => [
+            'middleware' => [
+                Blast\JsonError\Middleware\DebugJsonErrorMiddleware::class,
+            ],
+        ],
+    ],
+];

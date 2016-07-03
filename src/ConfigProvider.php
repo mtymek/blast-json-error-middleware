@@ -3,7 +3,7 @@
 namespace Blast\JsonError;
 
 use Blast\JsonError\Middleware\DebugJsonErrorMiddleware;
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Blast\JsonError\Middleware\DebugJsonErrorMiddlewareFactory;
 
 class ConfigProvider
 {
@@ -12,7 +12,7 @@ class ConfigProvider
         return [
             'dependencies' => [
                 'factories' => [
-                    DebugJsonErrorMiddleware::class => InvokableFactory::class,
+                    DebugJsonErrorMiddleware::class => DebugJsonErrorMiddlewareFactory::class,
                 ],
             ],
         ];

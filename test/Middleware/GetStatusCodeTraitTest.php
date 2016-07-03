@@ -13,14 +13,16 @@ class GetStatusCodeTraitTest extends PHPUnit_Framework_TestCase
     public function testReadsStatusCodeFromException()
     {
         $middleware = new JsonErrorMiddleware();
-        $response = $middleware(new Exception("error", 502), new ServerRequest(), new Response(), function () {});
+        $response = $middleware(new Exception("error", 502), new ServerRequest(), new Response(), function () {
+        });
         $this->assertEquals(502, $response->getStatusCode());
     }
 
     public function testIgnoresExceptionCodeIfItDoestNotMatchHttpErrorCode()
     {
         $middleware = new JsonErrorMiddleware();
-        $response = $middleware(new Exception("error", 1000), new ServerRequest(), new Response(), function () {});
+        $response = $middleware(new Exception("error", 1000), new ServerRequest(), new Response(), function () {
+        });
         $this->assertEquals(500, $response->getStatusCode());
     }
 
@@ -28,7 +30,8 @@ class GetStatusCodeTraitTest extends PHPUnit_Framework_TestCase
     {
         $middleware = new JsonErrorMiddleware();
         $originalResponse = (new Response())->withStatus(522);
-        $response = $middleware(new Exception(), new ServerRequest(), $originalResponse, function () {});
+        $response = $middleware(new Exception(), new ServerRequest(), $originalResponse, function () {
+        });
         $this->assertEquals(522, $response->getStatusCode());
     }
 
@@ -36,7 +39,8 @@ class GetStatusCodeTraitTest extends PHPUnit_Framework_TestCase
     {
         $middleware = new JsonErrorMiddleware();
         $originalResponse = (new Response())->withStatus(200);
-        $response = $middleware(new Exception(), new ServerRequest(), $originalResponse, function () {});
+        $response = $middleware(new Exception(), new ServerRequest(), $originalResponse, function () {
+        });
         $this->assertEquals(500, $response->getStatusCode());
     }
 }

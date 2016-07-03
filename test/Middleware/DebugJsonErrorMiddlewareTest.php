@@ -14,8 +14,9 @@ class DebugJsonErrorMiddlewareTest extends PHPUnit_Framework_TestCase
     {
         $exception = new Exception("Error");
         $middleware = new DebugJsonErrorMiddleware(true, dirname(dirname(__DIR__)));
-        $response = $middleware($exception, new ServerRequest(), new Response(), function () {});
+        $response = $middleware($exception, new ServerRequest(), new Response(), function () {
+        });
         $json = json_decode($response->getBody()->__toString(), true);
-        $this->assertEquals('test/Middleware/DebugJsonErrorMiddlewareTest.php:16', $json['error']['file']);
+        $this->assertEquals('test/Middleware/DebugJsonErrorMiddlewareTest.php:15', $json['error']['file']);
     }
 }

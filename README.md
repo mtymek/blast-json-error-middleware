@@ -1,5 +1,7 @@
-Blat\JsonError
-==============
+Blast\JsonError
+===============
+
+[![Build Status](https://travis-ci.org/mtymek/blast-json-error.svg?branch=master)](https://travis-ci.org/mtymek/blast-json-error)
 
 **JSON error handler middleware.**
 

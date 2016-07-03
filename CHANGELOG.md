@@ -1,7 +1,7 @@
 Changelog
 =========
 
-## 0.2.0 - 3.07.2016
+## 0.2.1 - 3.07.2016
 
 * Add example configuration files
 * Flatten namespace 

@@ -3,12 +3,13 @@
 namespace Blast\JsonErrorMiddleware;
 
 use Interop\Http\ServerMiddleware\DelegateInterface;
+use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Throwable;
 use Whoops\Exception\Inspector;
 use Zend\Diactoros\Response\JsonResponse;
 
-class DebugJsonErrorMiddleware
+class DebugJsonErrorMiddleware implements MiddlewareInterface
 {
     use GetStatusCodeTrait;
 

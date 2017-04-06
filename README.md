@@ -1,7 +1,7 @@
-Blast\JsonError
-===============
+Blast\JsonErrorMiddleware
+=========================
 
-[![Build Status](https://travis-ci.org/mtymek/blast-json-error.svg?branch=master)](https://travis-ci.org/mtymek/blast-json-error)
+[![Build Status](https://travis-ci.org/mtymek/blast-json-error-middleware.svg?branch=master)](https://travis-ci.org/mtymek/blast-json-error-middleware)
 
 **JSON error handler middleware.**
 
@@ -10,5 +10,5 @@ Blast\JsonError
 Install this library using composer:
 
 ```
-$ composer require mtymek/blast-json-error
+$ composer require mtymek/blast-json-error-middleware
 ```

@@ -1,11 +1,6 @@
 Changelog
 =========
 
-## 0.2.1 - 3.07.2016
-
-* Add example configuration files
-* Flatten namespace 
-
-## 0.1.0 - 3.07.2016
+## 0.1.0 - 6.04.2017
 
 * Initial release

@@ -2,19 +2,25 @@
 
 namespace Blast\JsonError;
 
-use Psr\Http\Message\ResponseInterface;
+use Interop\Http\ServerMiddleware\DelegateInterface;
+use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Throwable;
 use Zend\Diactoros\Response\JsonResponse;
 
-class JsonErrorMiddleware
+class JsonErrorMiddleware implements MiddlewareInterface
 {
     use GetStatusCodeTrait;
 
-    public function __invoke($error, ServerRequestInterface $request, ResponseInterface $response, callable $next)
+    public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
-        return new JsonResponse(
-            "An error has occurred.",
-            $this->getStatusCode($error, $response)
-        );
+        try {
+            return $delegate->process($request);
+        } catch (Throwable $throwable) {
+            return new JsonResponse(
+                "An error has occurred.",
+                $this->getStatusCode($throwable)
+            );
+        }
     }
 }

@@ -3,6 +3,7 @@
 namespace Blast\Test\JsonError;
 
 use Blast\JsonError\JsonErrorMiddleware;
+use Blast\Test\JsonError\Asset\ExceptionDelegate;
 use Exception;
 use PHPUnit_Framework_TestCase;
 use Zend\Diactoros\Response;
@@ -13,8 +14,7 @@ class JsonErrorMiddlewareTest extends PHPUnit_Framework_TestCase
     public function testReturnsJsonWithErrorMessage()
     {
         $middleware = new JsonErrorMiddleware();
-        $response = $middleware(new Exception(), new ServerRequest(), new Response(), function () {
-        });
+        $response = $middleware->process(new ServerRequest(), new ExceptionDelegate());
         $this->assertEquals('"An error has occurred."', $response->getBody()->__toString());
     }
 }

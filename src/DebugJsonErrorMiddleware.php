@@ -2,8 +2,9 @@
 
 namespace Blast\JsonError;
 
-use Psr\Http\Message\ResponseInterface;
+use Interop\Http\ServerMiddleware\DelegateInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Throwable;
 use Whoops\Exception\Inspector;
 use Zend\Diactoros\Response\JsonResponse;
 
@@ -28,8 +29,16 @@ class DebugJsonErrorMiddleware
         $this->stripBaseDir = $stripBaseDir;
     }
 
+    public function process(ServerRequestInterface $request, DelegateInterface $delegate)
+    {
+        try {
+            return $delegate->process($request);
+        } catch (Throwable $throwable) {
+            return $this->prepareError($throwable);
+        }
+    }
 
-    public function __invoke($error, ServerRequestInterface $request, ResponseInterface $response, callable $next)
+    private function prepareError(Throwable $error)
     {
         $data = [
             'type'    => get_class($error),
@@ -50,7 +59,7 @@ class DebugJsonErrorMiddleware
 
         return new JsonResponse(
             ['error' => $data],
-            $this->getStatusCode($error, $response)
+            $this->getStatusCode($error)
         );
     }
 

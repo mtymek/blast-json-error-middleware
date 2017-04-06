@@ -1,6 +1,6 @@
 <?php
 
-namespace Blast\Test\JsonError\Asset;
+namespace Blast\Test\JsonErrorMiddleware\Asset;
 
 use Exception;
 use Interop\Http\ServerMiddleware\DelegateInterface;

@@ -1,5 +1,6 @@
 {
     "name": "mtymek/blast-json-error",
+    "description": "JSON error handler middleware (PSR-7)",
     "license": "BSD-2-Clause",
     "authors": [
         {
@@ -21,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Blast\\JsonError\\": "src"
+            "Blast\\JsonErrorMiddleware\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Blast\\Test\\JsonError\\": "test"
+            "Blast\\Test\\JsonErrorMiddleware\\": "test"
         }
     },
     "scripts": {

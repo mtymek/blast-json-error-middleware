@@ -1,9 +1,9 @@
 <?php
 
-namespace Blast\Test\JsonError;
+namespace Blast\Test\JsonErrorMiddleware;
 
-use Blast\JsonError\DebugJsonErrorMiddleware;
-use Blast\Test\JsonError\Asset\ExceptionDelegate;
+use Blast\JsonErrorMiddleware\DebugJsonErrorMiddleware;
+use Blast\Test\JsonErrorMiddleware\Asset\ExceptionDelegate;
 use Exception;
 use PHPUnit_Framework_TestCase;
 use Zend\Diactoros\ServerRequest;

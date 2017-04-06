@@ -1,6 +1,6 @@
 <?php
 
-namespace Blast\JsonError;
+namespace Blast\JsonErrorMiddleware;
 
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use Interop\Http\ServerMiddleware\MiddlewareInterface;

@@ -1,5 +1,5 @@
 {
-    "name": "mtymek/blast-json-error",
+    "name": "mtymek/blast-json-error-middleware",
     "description": "JSON error handler middleware (PSR-7)",
     "license": "BSD-2-Clause",
     "authors": [
